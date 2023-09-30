@@ -2,7 +2,6 @@
 import React from 'react'
 import MaxWidthWrapper from '../maxWidthWrapper/MaxWidthWrapper'
 import Link from 'next/link'
-
 import { Navbar } from 'flowbite-react';
 import Image from 'next/image';
 import { Button } from '../ui/button';
@@ -27,11 +26,12 @@ const NavbarComp = () => {
             <Link href={'/'}>
               <span className=" self-center whitespace-nowrap text-xl font-semibold">
           MO<span className='text-blue-400 font-extrabold font-sans'>X</span>OK
-        </span></Link>
+              </span>
+            </Link>
       </Navbar.Brand>
       <div className="flex md:order-2 gap-4 md:gap-0">
-        <Button className=' font-extrabold drop-shadow-xl'>
-          Log In 
+            <Button className='drop-shadow-xl  font-bold ' variant={'ghost'}>
+              Register
         </Button>
         <Navbar.Toggle />
       </div>
@@ -39,11 +39,8 @@ const NavbarComp = () => {
             <Link href={'/pricing'}>
             <p className=' bg-slate-900/70 md:bg-transparent  backdrop-blur-2xl md:backdrop-blur-none  p-4 rounded-md shadow-2xl shadow-blue-500/20  hover:border-b md:hover:border-b-2 transition-all duration-150 ease-in-out border-blue-500'>Pricing</p>
             </Link>
-            <Link href={'/pricing'}>
-            <p className=' bg-slate-900/70 md:bg-transparent  backdrop-blur-2xl md:backdrop-blur-none  p-4 rounded-md shadow-2xl shadow-blue-500/20  hover:border-b md:hover:border-b-2 transition-all duration-150 ease-in-out border-blue-500'>Pricing</p>
-            </Link>
-            <Link href={'/pricing'}>
-            <p className=' bg-slate-900/70 md:bg-transparent  backdrop-blur-2xl md:backdrop-blur-none  p-4 rounded-md shadow-2xl shadow-blue-500/20  hover:border-b md:hover:border-b-2 transition-all duration-150 ease-in-out border-blue-500'>Pricing</p>
+            <Link href={'/about'}>
+            <p className=' bg-slate-900/70 md:bg-transparent  backdrop-blur-2xl md:backdrop-blur-none  p-4 rounded-md shadow-2xl shadow-blue-500/20  hover:border-b md:hover:border-b-2 transition-all duration-150 ease-in-out border-blue-500'>About us </p>
             </Link>
         
       </Navbar.Collapse>

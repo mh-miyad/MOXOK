@@ -2,6 +2,7 @@ import NavbarComp from '@/Components/Navbar/NavbarComp'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import FooterComp from '@/Components/Footer/FooterComp'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body className={`${inter.className} bg-slate-950 text-white max-h-screen `}>
         <NavbarComp />
         {children}
+        <FooterComp />
       </body>
     </html>
   )
