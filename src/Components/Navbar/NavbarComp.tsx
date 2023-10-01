@@ -10,10 +10,11 @@ const NavbarComp = () => {
     <>
     
       <MaxWidthWrapper>
-        <Navbar
+        <div className=' '>
+              <Navbar
       fluid
           rounded
-          className='bg-neutral-950/20  fixed inset-0 z-10 text-white backdrop-blur-xl w-full h-16 px-10'
+          className='bg-neutral-950/20  fixed inset-0 z-10 text-white backdrop-blur-xl w-full max-w-5xl mx-auto h-16 px-10'
     >
       <Navbar.Brand>
         {/* <Image
@@ -45,6 +46,8 @@ const NavbarComp = () => {
         
       </Navbar.Collapse>
     </Navbar>
+        </div>
+        
     </MaxWidthWrapper>
     
     </>

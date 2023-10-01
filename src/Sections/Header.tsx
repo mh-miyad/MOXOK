@@ -7,7 +7,7 @@ import React from 'react'
 
 const Header = () => {
   return (
-      <div className='flex justify-center items-center flex-col max-w-4xl mt-20 mb-10  relative text-center'>
+      <div className='flex justify-center items-center flex-col max-w-4xl mt-20 mb-10  relative text-center mx-auto '>
           
           <div>
              <Button className='rounded-full px-10 py-2 ring-2 shadow-xl shadow-slate-500/20 hover:ring mb-5 '> MO<span className=' text-blue-500 font-extrabold text-xl'>X</span>OK is now public! </Button>
