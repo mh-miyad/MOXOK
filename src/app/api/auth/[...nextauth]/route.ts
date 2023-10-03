@@ -1,4 +1,6 @@
+
 import NextAuth from "next-auth"
+
 import GoogleProvider from "next-auth/providers/google"
 
 
@@ -10,7 +12,8 @@ const handler = NextAuth({
             clientSecret: process.env.GOOGLE_CLIENT_SECRET!
 
         })
-    ]
+    ],
+
 
 })
 
