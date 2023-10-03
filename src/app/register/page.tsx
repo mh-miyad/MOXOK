@@ -45,8 +45,8 @@ const router =  useRouter()
       setToastShown(true)
     } else if (status==="unauthenticated") {
       
-      router.push('/register/login')
-      setToastShown(false)
+      router.push('/register')
+      setToastShown(true)
     }
   }
  // eslint-disable-next-line react-hooks/exhaustive-deps

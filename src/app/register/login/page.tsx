@@ -45,7 +45,7 @@ const LogIn = () => {
     } else if (status==="unauthenticated") {
       
       router.push('/register/login')
-      setToastShown(false)
+      setToastShown(true)
     }
   }
  // eslint-disable-next-line react-hooks/exhaustive-deps
