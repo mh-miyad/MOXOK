@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm, SubmitHandler } from "react-hook-form"
 import {
   Checkbox,
@@ -11,6 +11,8 @@ import { Button } from '@/Components/ui/button';
 import Link from 'next/link';
 import {FcGoogle} from "react-icons/fc"
 import { signIn ,useSession} from 'next-auth/react';
+import { toast } from 'react-toastify';
+import { useRouter } from 'next/navigation';
 type Inputs = {
   email: string,
   name: string,
@@ -31,9 +33,24 @@ const Register = () => {
     alert(email)
 
   }
-
+const router =  useRouter()
   const session = useSession()
-  console.log(session);
+ const [toastShown, setToastShown] = useState(false)
+
+  const { data, status } = session
+ useEffect(() => {
+   if (session && !toastShown) {
+    if (status === "authenticated") {
+      router.push('/dashboard')
+      setToastShown(true)
+    } else if (status==="unauthenticated") {
+      
+      router.push('/register/login')
+      setToastShown(false)
+    }
+  }
+ // eslint-disable-next-line react-hooks/exhaustive-deps
+ }, [status,toastShown])
   
   
   return (
