@@ -3,7 +3,6 @@ import React from 'react'
 import MaxWidthWrapper from '../maxWidthWrapper/MaxWidthWrapper'
 import Link from 'next/link'
 import { Navbar } from 'flowbite-react';
-import Image from 'next/image';
 import { Button } from '../ui/button';
 const NavbarComp = () => {
   return (
@@ -17,6 +16,7 @@ const NavbarComp = () => {
           className='bg-neutral-950/20  fixed inset-0 z-10 text-white backdrop-blur-xl w-full max-w-5xl mx-auto h-16 px-10'
     >
       <Navbar.Brand>
+        <Link href={'/'}>
         {/* <Image
           alt="Flowbite React Logo"
           className="mr-3 h-6 sm:h-9"
@@ -24,16 +24,17 @@ const NavbarComp = () => {
               width={9}
               height={9}
         /> */}
-            <Link href={'/'}>
               <span className=" self-center whitespace-nowrap text-xl font-semibold">
           MO<span className='text-blue-400 font-extrabold font-sans'>X</span>OK
               </span>
             </Link>
       </Navbar.Brand>
       <div className="flex md:order-2 gap-4 md:gap-0">
+           <Link href={'/register'}>
             <Button className='drop-shadow-xl  font-bold ' variant={'ghost'}>
               Register
         </Button>
+           </Link>
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
