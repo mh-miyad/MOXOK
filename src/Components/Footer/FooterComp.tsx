@@ -14,7 +14,7 @@ const FooterComp = () => {
         year={2023}
       />
       <Footer.LinkGroup>
-        <Footer.Link href="#">
+        {/* <Footer.Link href="#">
           About
         </Footer.Link>
         <Footer.Link href="#">
@@ -25,7 +25,7 @@ const FooterComp = () => {
         </Footer.Link>
         <Footer.Link href="#">
           Contact
-        </Footer.Link>
+        </Footer.Link> */}
       </Footer.LinkGroup>
     </Footer>
     </MaxWidthWrapper>
