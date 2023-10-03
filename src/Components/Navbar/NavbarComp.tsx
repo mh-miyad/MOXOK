@@ -20,7 +20,7 @@ const NavbarComp = () => {
       setToastShown(true)
     } else if (status==="unauthenticated") {
       toast.warn("User Log Out successfully")
-      setToastShown(false)
+      setToastShown(true)
     }
   }
  // eslint-disable-next-line react-hooks/exhaustive-deps
