@@ -1,10 +1,34 @@
 'use client';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import MaxWidthWrapper from '../maxWidthWrapper/MaxWidthWrapper'
 import Link from 'next/link'
-import { Navbar } from 'flowbite-react';
+import { Avatar, Dropdown, Navbar } from 'flowbite-react';
 import { Button } from '../ui/button';
+import { signOut, useSession } from 'next-auth/react'
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 const NavbarComp = () => {
+  const session = useSession()
+
+ const [toastShown, setToastShown] = useState(false)
+
+  const { data, status } = session
+ useEffect(() => {
+   if (session && !toastShown) {
+    if (status === "authenticated") {
+      toast.success("User Logged in successfully")
+      setToastShown(true)
+    } else if (status==="unauthenticated") {
+      toast.warn("User Log Out successfully")
+      setToastShown(false)
+    }
+  }
+ // eslint-disable-next-line react-hooks/exhaustive-deps
+ }, [status,toastShown])
+ 
+
+
+ 
   return (
     <>
     
@@ -30,11 +54,46 @@ const NavbarComp = () => {
             </Link>
       </Navbar.Brand>
       <div className="flex md:order-2 gap-4 md:gap-0">
-           <Link href={'/register'}>
+              {status === "authenticated" ? <>
+               <Dropdown
+          arrowIcon={false}
+          inline
+          label={<Avatar alt="User settings" img={`${data?.user?.image}`} rounded/>}
+        >
+          <Dropdown.Header>
+            <span className="block text-sm">
+           {data?.user?.name}
+            </span>
+            <span className="block truncate text-sm font-medium">
+              
+           {data?.user?.email}
+            </span>
+          </Dropdown.Header>
+          <Link href={'/dashboard'}>
+                    <Dropdown.Item>
+                      Dashboard
+            </Dropdown.Item>
+                    <Dropdown.Item>
+                      Dashboard
+            </Dropdown.Item>
+          </Link>
+       
+          <Dropdown.Divider />
+                 
+                  <Dropdown.Item>
+                     <p className=''
+                  onClick={()=>signOut()}>
+            Sign out
+          </p>
+          </Dropdown.Item>
+        </Dropdown>
+              </> : <>
+               <Link href={'/register'}>
             <Button className='drop-shadow-xl  font-bold ' variant={'ghost'}>
               Register
         </Button>
-           </Link>
+              </Link></>}
+              
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
@@ -48,7 +107,17 @@ const NavbarComp = () => {
       </Navbar.Collapse>
     </Navbar>
         </div>
-        
+        <ToastContainer
+        position="top-right"
+autoClose={2000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="dark"/>
     </MaxWidthWrapper>
     
     </>

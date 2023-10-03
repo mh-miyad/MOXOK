@@ -9,6 +9,8 @@ import {
 import { Input } from '@/Components/ui/input';
 import { Button } from '@/Components/ui/button';
 import Link from 'next/link';
+import { signIn, useSession } from 'next-auth/react';
+import { FcGoogle } from 'react-icons/fc';
 
 type Inputs = {
   email: string,
@@ -28,6 +30,9 @@ const LogIn = () => {
     alert(email)
 
   }
+  const session = useSession()
+  console.log(session);
+  
 
   return (
     <div className='mt-20 text-center'>
@@ -69,9 +74,12 @@ const LogIn = () => {
         </Label>
        </div>
       </div>
-      <Button className='hover:ring-2 hover:bg-blue-700 active:p-1 bg-blue-600' size={'lg'} type="submit" >
+      <Button className='hover:ring-2 w-full  hover:bg-blue-700 active:p-1 bg-blue-600' size={'lg'} type="submit" >
         Log In 
-      </Button>
+          </Button>
+             <button className='hover:ring-2 hover:bg-white transition-all ease-linear duration-150 rounded-md active:p-1 w-full  bg-white/90 text-center p-2'  onClick={()=> signIn('google')} >
+        <FcGoogle  className='w-6 h-6 mx-auto'/>
+      </button>
     </form>
     </div>
       </div>

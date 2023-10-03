@@ -9,7 +9,8 @@ import {
 import { Input } from '@/Components/ui/input';
 import { Button } from '@/Components/ui/button';
 import Link from 'next/link';
-
+import {FcGoogle} from "react-icons/fc"
+import { signIn ,useSession} from 'next-auth/react';
 type Inputs = {
   email: string,
   name: string,
@@ -31,14 +32,16 @@ const Register = () => {
 
   }
 
-
+  const session = useSession()
+  console.log(session);
+  
   
   return (
     <div className='mt-20 text-center'>
       
       
-      <div className='max-w-md mx-auto text-white '>
-          <form onSubmit={handleSubmit(onSubmit)} className='border border-gray-600/70 shadow-2xl  shadow-slate-800/20 rounded-xl ring-2 transition-all ease-linear duration-150 p-5 my-32  text-start  space-y-5 '>
+      <div className='max-w-md mx-auto text-white my-32  '>
+          <form onSubmit={handleSubmit(onSubmit)} className='border border-gray-600/70 shadow-2xl  shadow-slate-800/20 rounded-xl ring-2 transition-all ease-linear duration-150 p-5  text-start  space-y-5 '>
      
       <h2 className='text-xl md:text-4xl font-extrabold drop-shadow-xl  text-blue-600 text-center  p-3 '> Please Register Here </h2>
       <div>
@@ -84,9 +87,12 @@ const Register = () => {
         </Label>
        </div>
       </div>
-      <Button className='hover:ring-2 hover:bg-blue-700 active:p-1 bg-blue-600' size={'lg'} type="submit" >
+      <Button className='hover:ring-2 hover:bg-blue-700 active:p-1 w-full  bg-blue-600' size={'lg'} type="submit" >
         Register 
       </Button>
+      <button className='hover:ring-2 hover:bg-white transition-all ease-linear duration-150 rounded-md active:p-1 w-full  bg-white/90 text-center p-2'  onClick={()=> signIn('google')} >
+        <FcGoogle  className='w-6 h-6 mx-auto'/>
+      </button>
     </form>
     </div>
       </div>

@@ -3,6 +3,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import FooterComp from '@/Components/Footer/FooterComp'
+import AuthProvider from '@/Providers/AuthProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,9 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-slate-950 text-white max-h-screen `}>
+        <AuthProvider>
         <NavbarComp />
-        {children}
+           {children}
         <FooterComp />
+       </AuthProvider>
       </body>
     </html>
   )
