@@ -23,8 +23,8 @@ const NavbarComp = () => {
       setToastShown(true)
     }
   }
- // eslint-disable-next-line react-hooks/exhaustive-deps
- }, [status,toastShown])
+
+ }, [session,status,toastShown])
  
 
 
@@ -97,6 +97,9 @@ const NavbarComp = () => {
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
+            <Link href={'/products'}>
+            <p className=' bg-slate-900/70 md:bg-transparent  backdrop-blur-2xl md:backdrop-blur-none  p-4 rounded-md shadow-2xl shadow-blue-500/20  hover:border-b md:hover:border-b-2 transition-all duration-150 ease-in-out border-blue-500'>Products</p>
+            </Link>
             <Link href={'/pricing'}>
             <p className=' bg-slate-900/70 md:bg-transparent  backdrop-blur-2xl md:backdrop-blur-none  p-4 rounded-md shadow-2xl shadow-blue-500/20  hover:border-b md:hover:border-b-2 transition-all duration-150 ease-in-out border-blue-500'>Pricing</p>
             </Link>

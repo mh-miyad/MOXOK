@@ -12,13 +12,7 @@ import {
 import Link from 'next/link'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/Components/ui/tooltip';
 import { buttonVariants } from '@/Components/ui/button';
-// import { buttonVariants } from '@/components/ui/button'
-// import {
-//   Tooltip,
-//   TooltipContent,
-//   TooltipProvider,
-//   TooltipTrigger,
-// } from '@/components/ui/tooltip'
+
 const Pricing = () => {
    const [toggle, setToggle] = useState(false);
 
@@ -207,7 +201,7 @@ const Pricing = () => {
                       {plan === 'Free' ? (
                         <Link
                           href={
-                            user ? '/dashboard' : '/sign-in'
+                            user ? '/dashboard' : '/register/login'
                           }
                           className={buttonVariants({
                             className: 'w-full',
@@ -220,7 +214,7 @@ const Pricing = () => {
                         <> Miyad</>
                       ) : (
                         <Link
-                          href='/sign-in'
+                          href='/register/login'
                           className={buttonVariants({
                             className: 'w-full',
                           })}>
