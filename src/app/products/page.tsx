@@ -1,16 +1,15 @@
-import MaxWidthWrapper from '@/Components/maxWidthWrapper/MaxWidthWrapper'
-import React from 'react'
+import MaxWidthWrapper from "@/Components/maxWidthWrapper/MaxWidthWrapper";
+import ProjectSec from "@/Sections/Projects/ProjectSec";
+import React from "react";
 
 const Products = () => {
   return (
     <>
       <MaxWidthWrapper>
-        hello world
-    </MaxWidthWrapper>
-    
-    
+        <ProjectSec />
+      </MaxWidthWrapper>
     </>
-  )
-}
+  );
+};
 
-export default Products
+export default Products;
