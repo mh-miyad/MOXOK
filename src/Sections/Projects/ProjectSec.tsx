@@ -1,5 +1,10 @@
 import React from "react";
-import { SiGamemaker } from "react-icons/si";
+import {
+  SiGamemaker,
+  SiNintendogamecube,
+  SiGamedeveloper,
+  SiGamejolt,
+} from "react-icons/si";
 const ProjectSec = () => {
   return (
     <section className="px-5   ">
@@ -10,7 +15,7 @@ const ProjectSec = () => {
         <ol className="space-y-10 ">
           <li className="flex justify-around flex-col md:flex-row gap-x-5  items-center   rounded-md drop-shadow-xl p-2  my-4">
             <div className="">
-              <SiGamemaker className="w-20 h-20 text-blue-600" />
+              <SiNintendogamecube className="w-20 h-20 text-blue-600" />
             </div>
             <div className=" text-center m-2">
               <h3 className="caption-top font-bold  text-xl">
@@ -25,7 +30,7 @@ const ProjectSec = () => {
           </li>
           <li className="flex justify-around flex-col md:flex-row gap-x-5  items-center   rounded-md drop-shadow-xl p-2  my-4">
             <div className="">
-              <SiGamemaker className="w-20 h-20 text-red-600" />
+              <SiGamejolt className="w-20 h-20 text-red-600" />
             </div>
             <div className=" text-center m-2">
               <h3 className="caption-top font-bold  text-xl">
@@ -55,7 +60,7 @@ const ProjectSec = () => {
           </li>
           <li className="flex justify-around flex-col md:flex-row gap-x-5  items-center   rounded-md drop-shadow-xl p-2  my-4">
             <div className="">
-              <SiGamemaker className="w-20 h-20 text-yellow-300" />
+              <SiGamedeveloper className="w-20 h-20 text-yellow-300" />
             </div>
             <div className=" text-center m-2">
               <h3 className="caption-top font-bold  text-xl">
